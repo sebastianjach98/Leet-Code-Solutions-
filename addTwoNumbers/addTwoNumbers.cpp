@@ -3,13 +3,12 @@
 
 int main()
 {
-	LinkedList list;
+	LinkedList list, list2, list3;
 
 	list.addToHead(1);
-	list.addToHead(2);
-	list.addToHead(3);
-	list.addToHead(4);
-	list.print();
+	list2.addToHead(2);
+	list2.addToHead(3);
+	list3 = list + list2;
 
 	return 0;
 }

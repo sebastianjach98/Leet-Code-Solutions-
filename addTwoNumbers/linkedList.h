@@ -22,16 +22,20 @@ Node::Node(int num, Node *nextPtr = nullptr, Node *prevPtr = nullptr)
 struct LinkedList
 {
 	private:
+		int size;
 		Node *head, *tail;
 
 	public:
 		LinkedList();
 		void print();
 		void addToHead(int);
+		LinkedList operator + (const LinkedList&);
+
 };
 
 LinkedList::LinkedList()
 {
+	size = 0;
 	head = tail = nullptr;
 }
 
@@ -60,6 +64,17 @@ void LinkedList::addToHead(int num)
 		tmp = nullptr;
 		delete tmp;
 	}
+	size++;
+}
+
+LinkedList LinkedList::operator+ (const LinkedList & passed)
+{
+	LinkedList tmpList;
+
+	std::cout << size << std::endl;
+	std::cout << passed.size << std::endl;
+
+	return tmpList;
 }
 
 #endif

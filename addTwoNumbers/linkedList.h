@@ -1,5 +1,5 @@
-#ifndef linkedList_H
-#define linkedList_H
+#ifndef LinkedList_H
+#define LinkedList_H
 
 #include <iostream>
 
@@ -37,17 +37,13 @@ LinkedList::LinkedList()
 
 void LinkedList::print()
 {
-	if (head != nullptr)
-	{
-		Node *tmp = head;
+	Node *tmp = head;
 
+	std::cout << tmp->number << " ";
+	while (tmp->next != nullptr)
+	{
+		tmp = tmp->next;
 		std::cout << tmp->number << " ";
-		while (tmp->next != nullptr)
-		{
-			tmp = tmp->next;
-			std::cout << tmp->number << " ";
-		}
-		delete tmp;
 	}
 }
 
@@ -61,6 +57,7 @@ void LinkedList::addToHead(int num)
 
 		head = new Node(num, head);
 		tmp->prev = head;
+		tmp = nullptr;
 		delete tmp;
 	}
 }
